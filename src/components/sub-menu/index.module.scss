@@ -8,5 +8,15 @@
   .item {
     padding: 12px;
   }
+}
+
+@media (max-width: 1024px) {
+  .sub-menu {
+    display: block;
+
+    .item {
+      padding: 12px 0 0;
+    }
+  }
 
 }
