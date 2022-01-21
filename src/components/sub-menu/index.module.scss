@@ -1,29 +1,11 @@
-.submenu {
+.sub-menu {
   display: flex;
-  justify-content: space-between;
-  width: 30px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
 
-  .text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 8px;
-    height: 100%;
-
-    .text-title {
-      display: inline-block;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 22px;
-      color: #2c2e2f;
-    }
-
-    .text-desc {
-      font-weight: 400;
-      font-size: 10px;
-      line-height: 18px;
-      color: #515354;
-      display: inline-block;
-    }
+  .sub-menu-item {
+    padding: 12px;
   }
 }

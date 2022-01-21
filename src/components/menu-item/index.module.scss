@@ -1,0 +1,34 @@
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 146px;
+  height: 64px;
+  padding: 12px;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 8px;
+    height: 100%;
+
+    .text-title {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      color: #2c2e2f;
+    }
+
+    .text-desc {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 18px;
+      color: #515354;
+      display: inline-block;
+    }
+  }
+}

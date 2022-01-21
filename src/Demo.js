@@ -1,10 +1,9 @@
-import './App.css';
-import SubMenuWithIcon from "./components/sub-menu";
+import SubMenuPage from "./pages/sub-menu"
 
 function Demo() {
   return (
-    <div className="Demo">
-      <SubMenuWithIcon />
+    <div className="demo">
+      <SubMenuPage />
     </div>
   );
 }
