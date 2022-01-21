@@ -1,25 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import MenuItem, {MenuItemProps} from "../menu-item";
 
 import styles from "./index.module.scss";
 
-import classNames from "classnames/bind";
-
-const cx = classNames.bind(styles);
-
 export interface SubMenuProps {
     menuItems: MenuItemProps[];
-    currentMenuIndex? : number;
+    initialMenuIndex? : number;
 }
 
 const SubMenu = (props: SubMenuProps) => {
-    const {menuItems, currentMenuIndex} = props;
+    const {menuItems, initialMenuIndex} = props;
+    const [currentMenuIndex, setCurrentMenuIndex] = useState(initialMenuIndex)
+    const handleClick = (currentIndex: number) => {
+        setCurrentMenuIndex(currentIndex);
+    };
+
     return (
         <ul className={styles["sub-menu"]}>
             {menuItems.map((item: MenuItemProps, index) => {
                 return (
-                    <li key={index} className={cx(styles["item"], {"focus": index == currentMenuIndex}) }>
-                        <MenuItem {...item} />
+                    <li
+                        key={index}
+                        className={styles["item"]}
+                        onClick={() => handleClick(index)}
+                    >
+                        <MenuItem {...item} isFocus={currentMenuIndex === index}/>
                     </li>
                 )
             })}
@@ -29,7 +34,7 @@ const SubMenu = (props: SubMenuProps) => {
 
 SubMenu.defaultProps = {
     menuItems: [],
-    currentMenuIndex: 1
+    initialMenuIndex: 0
 }
 
 export default SubMenu;
