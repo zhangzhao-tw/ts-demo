@@ -20,8 +20,8 @@ const MenuItem = (props: MenuItemProps) => {
         <div className={cx(styles["menu-item"], {"focus": isFocus})}>
             <Icon />
             <div className={styles["text"]}>
-                <span className={styles["text-title"]}>{title}</span>
-                <span className={styles["text-desc"]}>{description}</span>
+                <span className={styles["title"]}>{title}</span>
+                <span className={styles["desc"]}>{description}</span>
             </div>
         </div>
     )
