@@ -2,7 +2,7 @@ const MENUS = [
     {
         "title": "百度一下",
         "description": "百度你就知道了",
-        "url": "https://www.baidu.com/",
+        "url": "http://localhost:3000/",
     },
     {
         "title": "百度一下",
@@ -22,7 +22,7 @@ const MENUS = [
     {
         "title": "百度一下",
         "description": "百度你就知道了",
-        "url": "https://www.baidu.com/",
+        "url": "http://localhost:3000/",
     },
 ]
 

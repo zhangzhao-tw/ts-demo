@@ -9,7 +9,7 @@ const NAVIGATIONS = [
     },
     {
         "desc":"了解更多",
-        "url": "https://www.baidu.com",
+        "url": "http://localhost:3000/",
     }
 ]
 

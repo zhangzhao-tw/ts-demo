@@ -62,7 +62,7 @@ const Navigations = (props: NavigationsProps) => {
 }
 
 Navigations.defaultProps = {
-    initialIndex: 0,
+    initialIndex: -1,
     navigations: [],
 }
 

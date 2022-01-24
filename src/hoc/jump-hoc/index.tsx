@@ -17,7 +17,7 @@ enum JUMP_TARGET {
 const WithJumpHoc = (props: WithJumpHocProps) => {
     const {WrappedComponent, jumpUrl} = props
     // calculated by jumpUrl
-    const target = jumpUrl.indexOf("baidu") === -1 ? JUMP_TARGET.BLANK : JUMP_TARGET.SELF;
+    const target = jumpUrl.indexOf("localhost") === -1 ? JUMP_TARGET.BLANK : JUMP_TARGET.SELF;
     return class extends React.Component {
         render() {
             return target === JUMP_TARGET.SELF ? (
