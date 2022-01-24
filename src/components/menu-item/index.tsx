@@ -11,6 +11,7 @@ const cx = classNames.bind(styles);
 export interface MenuItemProps {
     title: string;
     description: string;
+    url: string;
     isFocus? : boolean;
 }
 
@@ -28,6 +29,8 @@ const MenuItem = (props: MenuItemProps) => {
 }
 
 MenuItem.defaultProps = {
+    title:"",
+    description:"",
     isFocus: false
 }
 
