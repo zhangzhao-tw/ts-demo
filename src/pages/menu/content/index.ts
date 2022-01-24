@@ -1,4 +1,4 @@
-const SUB_MENUS = [
+const MENUS = [
     {
         "title": "百度一下",
         "description": "百度你就知道了",
@@ -21,4 +21,4 @@ const SUB_MENUS = [
     },
 ]
 
-export default SUB_MENUS
+export default MENUS

@@ -1,9 +1,9 @@
-import SubMenuPage from "./pages/sub-menu"
+import MenuPage from "./pages/menu"
 
 function Demo() {
   return (
     <div className="demo">
-      <SubMenuPage />
+      <MenuPage />
     </div>
   );
 }

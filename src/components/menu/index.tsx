@@ -3,12 +3,12 @@ import MenuItem, {MenuItemProps} from "../menu-item";
 
 import styles from "./index.module.scss";
 
-export interface SubMenuProps {
+export interface MenuProps {
     menuItems: MenuItemProps[];
     initialMenuIndex? : number;
 }
 
-const SubMenu = (props: SubMenuProps) => {
+const Menu = (props: MenuProps) => {
     const {menuItems, initialMenuIndex} = props;
     const [currentMenuIndex, setCurrentMenuIndex] = useState(initialMenuIndex)
     const handleClick = (currentIndex: number) => {
@@ -16,7 +16,7 @@ const SubMenu = (props: SubMenuProps) => {
     };
 
     return (
-        <ul className={styles["sub-menu"]}>
+        <ul className={styles["menu"]}>
             {menuItems.map((item: MenuItemProps, index) => {
                 return (
                     <li
@@ -32,9 +32,9 @@ const SubMenu = (props: SubMenuProps) => {
     )
 }
 
-SubMenu.defaultProps = {
+Menu.defaultProps = {
     menuItems: [],
     initialMenuIndex: 0
 }
 
-export default SubMenu;
+export default Menu;
