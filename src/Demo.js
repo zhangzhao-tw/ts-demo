@@ -1,11 +1,11 @@
 import MenuPage from "./pages/menu"
-import NavigationsPage from "./pages/navgation";
+import ChannelPage from "./pages/channel";
 
 function Demo() {
     return (
         <div className="demo">
             <MenuPage/>
-            <NavigationsPage/>
+            <ChannelPage/>
         </div>
     );
 }
