@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import MenuItem, {MenuItemProps} from "../menu-item";
 
 import styles from "./index.module.scss";
@@ -6,15 +6,11 @@ import WithJumpHoc from "../../hoc/jump-hoc";
 
 export interface MenuProps {
     menuItems: MenuItemProps[];
-    initialMenuIndex? : number;
+    focusIndex? : number;
 }
 
 const Menu = (props: MenuProps) => {
-    const {menuItems, initialMenuIndex} = props;
-    const [currentMenuIndex, setCurrentMenuIndex] = useState(initialMenuIndex)
-    const handleClick = (currentIndex: number) => {
-        setCurrentMenuIndex(currentIndex);
-    };
+    const {menuItems, focusIndex} = props;
 
     return (
         <ul className={styles["menu"]}>
@@ -23,13 +19,12 @@ const Menu = (props: MenuProps) => {
                     WrappedComponent: MenuItem,
                     jumpUrl: menuItem.url,
                 })
-                menuItem.isFocus = currentMenuIndex === index;
+                menuItem.isFocus = index === focusIndex;
 
                 return (
                     <li
                         key={index}
                         className={styles["item"]}
-                        onClick={() => handleClick(index)}
                     >
                         <WithJumpHocMenuItem {...menuItem}/>
                     </li>
@@ -41,7 +36,7 @@ const Menu = (props: MenuProps) => {
 
 Menu.defaultProps = {
     menuItems: [],
-    initialMenuIndex: 0
+    focusIndex: 1
 }
 
 export default Menu;

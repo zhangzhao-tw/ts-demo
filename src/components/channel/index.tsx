@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 import WithJumpHoc from "../../hoc/jump-hoc";
 
@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 
 export interface ChannelProps {
-    initialIndex?: number;
+    focusIndex?: number;
     channelItems: ChannelItem[];
 }
 
@@ -21,19 +21,13 @@ interface ChannelItem {
 
 const Channel = (props: ChannelProps) => {
 
-    const {initialIndex, channelItems} = props;
-    const [currentChannelIndex, setCurrentChannelIndex] = useState(initialIndex)
-
-    const handleClick = (currentIndex: number) => {
-        setCurrentChannelIndex(currentIndex);
-    };
+    const {focusIndex, channelItems} = props;
 
 
     return (
         <ul className={styles["channel"]}>
             {channelItems.map(
                 (channelItem: ChannelItem, index: number) => {
-
                     const ChannelLink = () => {
                         return (
                             <span className={styles["title"]}>{channelItem.title}</span>
@@ -48,8 +42,7 @@ const Channel = (props: ChannelProps) => {
                     return (
                         <li
                             key={index}
-                            className={cx("group", {"focus": index === currentChannelIndex})}
-                            onClick={() => {handleClick(index)}}
+                            className={cx("group", {"focus": index === focusIndex})}
                         >
                             <WithJumpHocChannelLink />
                         </li>
@@ -60,7 +53,7 @@ const Channel = (props: ChannelProps) => {
 }
 
 Channel.defaultProps = {
-    initialIndex: -1,
+    focusIndex: -1,
     channelItems: [],
 }
 
